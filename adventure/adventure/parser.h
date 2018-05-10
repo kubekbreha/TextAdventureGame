@@ -24,7 +24,7 @@ struct parser {
  * creates the list of commands, which parser understands.
  * @return Reference to the newly created parser or NULL.
  */
-struct parser* create_parser();
+struct parser* create_parser(void);
 
 
 /**

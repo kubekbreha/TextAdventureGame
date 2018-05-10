@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8C79B00520A493BC00390AB4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B00420A493BC00390AB4 /* main.c */; };
+		8C79B03520A4B11700390AB4 /* command.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03420A4B11700390AB4 /* command.c */; };
+		8C79B03720A4B22200390AB4 /* room.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03620A4B22200390AB4 /* room.c */; };
+		8C79B03920A4BB6400390AB4 /* item.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03820A4BB6400390AB4 /* item.c */; };
+		8C79B03B20A4C52E00390AB4 /* world.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03A20A4C52E00390AB4 /* world.c */; };
+		8C79B03D20A4C58D00390AB4 /* container.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03C20A4C58D00390AB4 /* container.c */; };
+		8C79B03F20A4EDFA00390AB4 /* backpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03E20A4EDFA00390AB4 /* backpack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,14 +31,20 @@
 /* Begin PBXFileReference section */
 		8C79B00120A493BC00390AB4 /* adventure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = adventure; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C79B00420A493BC00390AB4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		8C79B00B20A493F800390AB4 /* parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = parser.h; path = ../../../../Downloads/adventure/parser.h; sourceTree = "<group>"; };
-		8C79B00C20A493F900390AB4 /* container.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = container.h; path = ../../../../Downloads/adventure/container.h; sourceTree = "<group>"; };
-		8C79B00D20A493F900390AB4 /* room.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = room.h; path = ../../../../Downloads/adventure/room.h; sourceTree = "<group>"; };
-		8C79B00E20A493F900390AB4 /* backpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = backpack.h; path = ../../../../Downloads/adventure/backpack.h; sourceTree = "<group>"; };
-		8C79B00F20A493F900390AB4 /* command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = command.h; path = ../../../../Downloads/adventure/command.h; sourceTree = "<group>"; };
-		8C79B01020A493F900390AB4 /* world.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = world.h; path = ../../../../Downloads/adventure/world.h; sourceTree = "<group>"; };
-		8C79B01120A493F900390AB4 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = game.h; path = ../../../../Downloads/adventure/game.h; sourceTree = "<group>"; };
-		8C79B01220A493F900390AB4 /* item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = item.h; path = ../../../../Downloads/adventure/item.h; sourceTree = "<group>"; };
+		8C79B01C20A497EC00390AB4 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		8C79B01D20A497EC00390AB4 /* container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = container.h; sourceTree = "<group>"; };
+		8C79B01E20A497EC00390AB4 /* room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = room.h; sourceTree = "<group>"; };
+		8C79B01F20A497ED00390AB4 /* backpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = backpack.h; sourceTree = "<group>"; };
+		8C79B02020A497ED00390AB4 /* command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command.h; sourceTree = "<group>"; };
+		8C79B02120A497ED00390AB4 /* world.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = world.h; sourceTree = "<group>"; };
+		8C79B02220A497ED00390AB4 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		8C79B02320A497ED00390AB4 /* item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = item.h; sourceTree = "<group>"; };
+		8C79B03420A4B11700390AB4 /* command.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = command.c; sourceTree = "<group>"; };
+		8C79B03620A4B22200390AB4 /* room.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = room.c; sourceTree = "<group>"; };
+		8C79B03820A4BB6400390AB4 /* item.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = item.c; sourceTree = "<group>"; };
+		8C79B03A20A4C52E00390AB4 /* world.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = world.c; sourceTree = "<group>"; };
+		8C79B03C20A4C58D00390AB4 /* container.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = container.c; sourceTree = "<group>"; };
+		8C79B03E20A4EDFA00390AB4 /* backpack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = backpack.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +77,21 @@
 		8C79B00320A493BC00390AB4 /* adventure */ = {
 			isa = PBXGroup;
 			children = (
-				8C79B00E20A493F900390AB4 /* backpack.h */,
-				8C79B00F20A493F900390AB4 /* command.h */,
-				8C79B00C20A493F900390AB4 /* container.h */,
-				8C79B01120A493F900390AB4 /* game.h */,
-				8C79B01220A493F900390AB4 /* item.h */,
-				8C79B00B20A493F800390AB4 /* parser.h */,
-				8C79B00D20A493F900390AB4 /* room.h */,
-				8C79B01020A493F900390AB4 /* world.h */,
+				8C79B01F20A497ED00390AB4 /* backpack.h */,
+				8C79B02020A497ED00390AB4 /* command.h */,
+				8C79B01D20A497EC00390AB4 /* container.h */,
+				8C79B02220A497ED00390AB4 /* game.h */,
+				8C79B02320A497ED00390AB4 /* item.h */,
+				8C79B01C20A497EC00390AB4 /* parser.h */,
+				8C79B01E20A497EC00390AB4 /* room.h */,
+				8C79B02120A497ED00390AB4 /* world.h */,
 				8C79B00420A493BC00390AB4 /* main.c */,
+				8C79B03420A4B11700390AB4 /* command.c */,
+				8C79B03620A4B22200390AB4 /* room.c */,
+				8C79B03820A4BB6400390AB4 /* item.c */,
+				8C79B03A20A4C52E00390AB4 /* world.c */,
+				8C79B03C20A4C58D00390AB4 /* container.c */,
+				8C79B03E20A4EDFA00390AB4 /* backpack.c */,
 			);
 			path = adventure;
 			sourceTree = "<group>";
@@ -133,7 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C79B03720A4B22200390AB4 /* room.c in Sources */,
 				8C79B00520A493BC00390AB4 /* main.c in Sources */,
+				8C79B03F20A4EDFA00390AB4 /* backpack.c in Sources */,
+				8C79B03920A4BB6400390AB4 /* item.c in Sources */,
+				8C79B03D20A4C58D00390AB4 /* container.c in Sources */,
+				8C79B03B20A4C52E00390AB4 /* world.c in Sources */,
+				8C79B03520A4B11700390AB4 /* command.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

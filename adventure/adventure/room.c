@@ -77,6 +77,11 @@ void delete_item_from_room(struct room* room, struct item* item){
 
 
 void add_item_to_room(struct room* room, struct item* item){
+    if(room == NULL || item == NULL){
+        return;
+    }
+    
+    
     if(room->items == NULL){
     
         printf("--empty items\n");
@@ -105,6 +110,13 @@ void add_item_to_room(struct room* room, struct item* item){
 
 
 struct item* get_item_from_room(const struct room* room, const char* name){
+    if(room == NULL || name == NULL){
+        return NULL;
+    }
+    if(strlen(name)<1){
+        return NULL;
+    }
+    
     struct container* container = room->items;
     
     while (container != NULL){

@@ -32,8 +32,7 @@ int main(int argc, const char * argv[]) {
     add_item_to_backpack(back, item3);
     
     delete_item_from_backpack(back, item3);
-    
-    print_backpack(back);
+
     
     printf( "--------------------TEST ROOM--------------------------------\n");
 //    struct room* home = create_room("start", "Nachadzas sa v chyzi svarneho suhaja. Na vychode sa nachadzaju dvere veduce z chyze von.");

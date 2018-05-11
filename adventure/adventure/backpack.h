@@ -15,7 +15,6 @@ struct backpack {
     struct container* items;    /// list of items
 };
 
-void print_backpack(struct backpack* backpack);
 
 /**
  * Creates backpack

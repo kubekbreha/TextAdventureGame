@@ -102,21 +102,6 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
 
 
 
-void print_backpack(struct backpack* backpack){
-    struct container* container;
-    container = backpack->items;
-    
-    for (int i = 0; i < backpack->size; i++){
-        
-        printf("found: %s\n", container->item->name);
-        container = container->next;
-          
-    }
-}
-
-
-
-
 
 struct item* get_item_from_backpack(const struct backpack* backpack, char* name){
     if(backpack == NULL){

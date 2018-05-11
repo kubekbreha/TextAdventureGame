@@ -17,6 +17,7 @@ struct room {
     struct container* items;    /// list of items in the room/location
 };
 
+void show_items(struct room* room);
 
 /**
  * Creates new room

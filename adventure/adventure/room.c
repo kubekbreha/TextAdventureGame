@@ -66,25 +66,59 @@ void show_room(const struct room* room){
         printf("vychod\n");
     if(room->west!= NULL) 
         printf("zapad\n");
-    if(room->items != NULL)
-        printf("mas itemy\n");
 }
 
 void delete_item_from_room(struct room* room, struct item* item){
+    if(room == NULL || item == NULL) return;
     
-    
+    if(room->items->next == NULL){
+        free(room->items->next);
+        return;
+    }else{
+        struct container* container;
+        container = room->items;
+        
+        while(container->next != NULL){
+            if(container->item == item){
+                
+                struct container* temp = container->next;
+                container->item = container->next->item;
+                container->next = temp->next;
+                free(temp);
+                return;
+            }
+            if(container->next->next == NULL ){
+                struct container* temp = container->next;
+                container->next->item = container->next->item;
+                container->next = temp->next;
+                free(temp);
+                return;
+            }
+            container = container->next;
+        }
+    }
 }
+    
 
+
+void show_items(struct room* room){
+    
+    struct container* container;
+    container = room->items;
+    
+    while(container != NULL){
+        printf("found: %s\n", container->item->name);
+        container = container->next;
+    }
+}
 
 void add_item_to_room(struct room* room, struct item* item){
     if(room == NULL || item == NULL){
         return;
     }
     
-    
     if(room->items == NULL){
     
-        printf("--empty items\n");
         struct container* new_container = (struct container*)calloc(1, sizeof(struct container));
         new_container->type = ITEM;
         new_container->item= item;
@@ -97,7 +131,6 @@ void add_item_to_room(struct room* room, struct item* item){
         container = room->items;
         while (container->next != NULL){
             container = container->next;
-              printf("--NOT empty items\n");
         }
         struct container* new_container = (struct container*)calloc(1, sizeof(struct container));
         new_container->type = ITEM;
@@ -120,7 +153,6 @@ struct item* get_item_from_room(const struct room* room, const char* name){
     struct container* container = room->items;
     
     while (container != NULL){
-        printf("run\n");
         if (container->item->name == name)
             return container->item;
         container = container->next;

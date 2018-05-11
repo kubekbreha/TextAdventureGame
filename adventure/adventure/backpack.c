@@ -30,7 +30,9 @@ struct backpack* destroy_backpack(struct backpack* backpack){
 
 
 bool add_item_to_backpack(struct backpack* backpack, struct item* item){
-    if(item == NULL) return false;
+    if(item == NULL || backpack == NULL){
+        return NULL;
+    }
     
     if(backpack->capacity >= backpack->size){
         if(backpack->items == NULL){
@@ -62,17 +64,75 @@ bool add_item_to_backpack(struct backpack* backpack, struct item* item){
     return false;
 }
 
+
 void delete_item_from_backpack(struct backpack* backpack, struct item* item){
+    if(backpack == NULL || item == NULL) return;
     
+    if(backpack->items->next == NULL){
+        free(backpack->items->next);
+        backpack->size--;
+        return;
+    }else{
+        struct container* container;
+        container = backpack->items;
+        
+        for (int i = 0; i < backpack->size; i++){
+            if(container->item == item){
+                printf("found item %d\n", i);
+            
+                if(i == backpack->size-1 ){
+                    free(container->next);
+                    backpack->size--;
+                    break;
+                }else{
+                    struct container* temp = container->next;
+                    container->item = container->next->item;
+                    container->next = temp->next;
+                    free(temp);
+                    backpack->size--;
+                }
+                return;
+            }else{
+                printf("NOT found item %d\n", i);
+                container = container->next;
+            }
+        }
+    }
 }
 
+
+
+void print_backpack(struct backpack* backpack){
+    struct container* container;
+    container = backpack->items;
+    
+    for (int i = 0; i < backpack->size; i++){
+        
+        printf("found: %s\n", container->item->name);
+        container = container->next;
+          
+    }
+}
+
+
+
+
+
 struct item* get_item_from_backpack(const struct backpack* backpack, char* name){
+    if(backpack == NULL){
+        return NULL;
+    }
+    if(strlen(name)<1 ){
+        return NULL;
+    }
+    
     struct container* container = backpack->items;
     
     while (container != NULL){
         if (container->item->name == name)
             return container->item;
-        container = container->next;
+        else
+            container = container->next;
     }
     return NULL;
 }

@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
     
     printf("-=-=-=-=-=-=-=-=-=-=\n");
     show_room(garden);
-    if(NULL != get_item_from_room(garden, "SKALA4")){
+    if(NULL != get_item_from_room(garden, "SKALA")){
         printf("hura\n");
     }
     

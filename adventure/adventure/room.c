@@ -88,7 +88,7 @@ void add_item_to_room(struct room* room, struct item* item){
         room->items = new_container;
   
     }else{
-        struct container* container = (struct container*)calloc(1, sizeof(struct container));
+        struct container* container;
         container = room->items;
         while (container->next != NULL){
             container = container->next;

@@ -30,6 +30,35 @@ struct backpack* destroy_backpack(struct backpack* backpack){
 
 
 bool add_item_to_backpack(struct backpack* backpack, struct item* item){
+    if(item == NULL) return false;
+    
+    if(backpack->capacity >= backpack->size){
+        if(backpack->items == NULL){
+            printf("--empty backpack\n");
+            struct container* new_container = (struct container*)calloc(1, sizeof(struct container));
+            new_container->type = ITEM;
+            new_container->item= item;
+            new_container->next= NULL;
+            backpack->size++;
+            
+            backpack->items = new_container;
+            return true;
+        }else{
+            struct container* container;
+            container = backpack->items;
+            while (container->next != NULL){
+                container = container->next;
+                printf("--NOT empty backpack\n");
+            }
+            struct container* new_container = (struct container*)calloc(1, sizeof(struct container));
+            new_container->type = ITEM;
+            new_container->item= item;
+            new_container->next= NULL;
+            backpack->size++;
+            container->next = new_container;
+            return true;
+        }
+    }
     return false;
 }
 
@@ -38,5 +67,12 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
 }
 
 struct item* get_item_from_backpack(const struct backpack* backpack, char* name){
+    struct container* container = backpack->items;
+    
+    while (container != NULL){
+        if (container->item->name == name)
+            return container->item;
+        container = container->next;
+    }
     return NULL;
 }

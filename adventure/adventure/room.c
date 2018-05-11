@@ -49,6 +49,9 @@ struct room* destroy_room(struct room* room){
 
 
 void set_exits_from_room(struct room *room, struct room *north, struct room *south, struct room *east, struct room *west){
+    if(room == NULL){
+        return;
+    }
     room->north = north;
     room->south = south;
     room->east = east;

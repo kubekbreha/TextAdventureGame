@@ -64,6 +64,10 @@ struct container* create_container(struct container* first, enum container_type 
 
 
 struct container* destroy_containers(struct container* first){
+    if(first == NULL){
+        return NULL;
+    }
+    
     struct container* container= first;
     while(container!= NULL){
         struct container* ptr= container;

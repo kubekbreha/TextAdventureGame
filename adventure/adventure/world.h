@@ -13,7 +13,7 @@
  * Finally returns reference to the created world.
  * @return Reference to the list of all available game rooms
  */
-struct container* create_world(void);
+struct container* create_world();
 
 
 /**

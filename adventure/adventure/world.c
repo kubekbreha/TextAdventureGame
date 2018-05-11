@@ -23,16 +23,30 @@ struct container* create_world(){
 }
 
 struct container* add_room_to_world(struct container* world, struct room* room){
+    if(world == NULL || room == NULL){
+        return NULL;
+    }
+    
     world->room = room;
     return world;
 }
 
 struct container* destroy_world(struct container* world){
+    if(world == NULL){
+        return NULL;
+    }
     free(world);
     return NULL;
 }
 
 struct room* get_room(struct container* world, char* name){
+    if(world == NULL || name == NULL){
+        return NULL;
+    }
+    if(strlen(name)<1){
+        return NULL;
+    }
+
     struct container* container = world;
     
     while (world != NULL){

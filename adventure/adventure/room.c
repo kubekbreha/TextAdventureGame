@@ -77,19 +77,18 @@ void delete_item_from_room(struct room* room, struct item* item){
 
 
 void add_item_to_room(struct room* room, struct item* item){
-    struct container* container;
     if(room->items == NULL){
-        container = (struct container*)calloc(1, sizeof(struct container));
+    
         printf("--empty items\n");
         struct container* new_container = (struct container*)calloc(1, sizeof(struct container));
         new_container->type = ITEM;
         new_container->item= item;
         new_container->next= NULL;
         
-        container = new_container;
-        room->items = container;
+        room->items = new_container;
   
     }else{
+        struct container* container = (struct container*)calloc(1, sizeof(struct container));
         container = room->items;
         while (container->next != NULL){
             container = container->next;
@@ -100,7 +99,7 @@ void add_item_to_room(struct room* room, struct item* item){
         new_container->item= item;
         new_container->next= NULL;
         
-        room->items->next = new_container;
+        container->next = new_container;
     }
 }
 

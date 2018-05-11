@@ -14,6 +14,8 @@
 		8C79B03B20A4C52E00390AB4 /* world.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03A20A4C52E00390AB4 /* world.c */; };
 		8C79B03D20A4C58D00390AB4 /* container.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03C20A4C58D00390AB4 /* container.c */; };
 		8C79B03F20A4EDFA00390AB4 /* backpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B03E20A4EDFA00390AB4 /* backpack.c */; };
+		8C79B04120A4F9BA00390AB4 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B04020A4F9BA00390AB4 /* game.c */; };
+		8C79B04320A4FB5700390AB4 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C79B04220A4FB5700390AB4 /* parser.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +47,8 @@
 		8C79B03A20A4C52E00390AB4 /* world.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = world.c; sourceTree = "<group>"; };
 		8C79B03C20A4C58D00390AB4 /* container.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = container.c; sourceTree = "<group>"; };
 		8C79B03E20A4EDFA00390AB4 /* backpack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = backpack.c; sourceTree = "<group>"; };
+		8C79B04020A4F9BA00390AB4 /* game.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
+		8C79B04220A4FB5700390AB4 /* parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = parser.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				8C79B03A20A4C52E00390AB4 /* world.c */,
 				8C79B03C20A4C58D00390AB4 /* container.c */,
 				8C79B03E20A4EDFA00390AB4 /* backpack.c */,
+				8C79B04020A4F9BA00390AB4 /* game.c */,
+				8C79B04220A4FB5700390AB4 /* parser.c */,
 			);
 			path = adventure;
 			sourceTree = "<group>";
@@ -152,8 +158,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C79B03720A4B22200390AB4 /* room.c in Sources */,
+				8C79B04120A4F9BA00390AB4 /* game.c in Sources */,
 				8C79B00520A493BC00390AB4 /* main.c in Sources */,
 				8C79B03F20A4EDFA00390AB4 /* backpack.c in Sources */,
+				8C79B04320A4FB5700390AB4 /* parser.c in Sources */,
 				8C79B03920A4BB6400390AB4 /* item.c in Sources */,
 				8C79B03D20A4C58D00390AB4 /* container.c in Sources */,
 				8C79B03B20A4C52E00390AB4 /* world.c in Sources */,

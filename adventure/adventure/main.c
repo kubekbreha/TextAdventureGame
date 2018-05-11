@@ -26,17 +26,22 @@ int main(int argc, const char * argv[]) {
     
     struct item* item = create_item("SKALA", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
     struct item* item2 = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.2", USABLE);
+    struct item* item3 = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.2", USABLE);
+     struct item* item4 = create_item("SKALA4", "Pokial nie si sochar tak si ju prestan vsimat.2", USABLE);
+     struct item* item5 = create_item("SKALA5", "Pokial nie si sochar tak si ju prestan vsimat.2", USABLE);
     
     add_item_to_room(garden, item);
-     add_item_to_room(garden, item2);
-    
+    add_item_to_room(garden, item2);
+    add_item_to_room(garden, item3);
+    add_item_to_room(garden, item4);
+    add_item_to_room(garden, item5);
     
     // show room
     show_room(home);
     
     printf("-=-=-=-=-=-=-=-=-=-=\n");
     show_room(garden);
-    if(NULL != get_item_from_room(garden, "SKALA2")){
+    if(NULL != get_item_from_room(garden, "SKALA4")){
         printf("hura\n");
     }
     

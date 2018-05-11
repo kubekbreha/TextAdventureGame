@@ -52,7 +52,7 @@ void play_game(struct game* game);
  * initializes and creates all of it's members.
  * @return The created game object or NULL, if game could not be created.
  */
-struct game* create_game();
+struct game* create_game(void);
 
 
 /**

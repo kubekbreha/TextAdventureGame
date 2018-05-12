@@ -11,12 +11,14 @@
 #include"item.h"
 
 struct item* create_item(char* name, char* description, unsigned int properties){
-    if(name == NULL || description == NULL)
-       return NULL;
     
-    if(strlen(name)<1 || strlen(description)<1)
+    if(name == NULL || description== NULL){
         return NULL;
-
+    }
+    if(strlen(name)<1 || strlen(description)<1){
+        return NULL;
+    }
+    
     struct item* new_item = (struct item*)calloc(1, sizeof(struct item));
     new_item->name = name;
     new_item->description = description;

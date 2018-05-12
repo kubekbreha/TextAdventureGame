@@ -12,7 +12,7 @@
 #include "item.h"
 #include "backpack.h"
 #include "container.h"
-
+#include "game.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -49,12 +49,14 @@ int main(int argc, const char * argv[]) {
     add_item_to_room(garden, item4);
     add_item_to_room(garden, item5);
 
-    delete_item_from_room(garden, item5);
+    //delete_item_from_room(garden, item5);
 
+    if(get_from_container_by_name(garden->items,"SKaLA5")!=NULL){
+        printf("hure\n");
+    }
     //show_room(garden);
 
-
-    show_items(garden);
+    create_game();
     
     return 0;
 }

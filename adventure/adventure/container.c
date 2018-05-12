@@ -6,8 +6,9 @@
 //
 
 #include<stdio.h>
-#include<stdbool.h>
 #include<stdlib.h>
+#include<string.h>
+#include <ctype.h>
 
 #include"container.h"
 
@@ -74,17 +75,62 @@ struct container* destroy_containers(struct container* first){
         container= container->next;
         free(ptr);
     }
+    free(container);
+    free(first);
     return NULL;
 }
 
 
+int stricmp (const char *p1, const char *p2){
+    register unsigned char *s1 = (unsigned char *) p1;
+    register unsigned char *s2 = (unsigned char *) p2;
+    unsigned char c1, c2;
+    
+    do{
+        c1 = (unsigned char) toupper((int)*s1++);
+        c2 = (unsigned char) toupper((int)*s2++);
+        if (c1 == '\0'){
+            return c1 - c2;
+        }
+    }
+    while (c1 == c2);
+    
+    return c1 - c2;
+}
+
 void* get_from_container_by_name(struct container *first, const char *name){
+    if(first == NULL || name == NULL){
+        return  NULL;
+    }
+    if(strlen(name)<1){
+        return NULL;
+    }
+    struct container* container = first;
+
+    while (container != NULL){
+        
+        if (stricmp(container->item->name, name))
+            return container->item;
+        if (stricmp(container->command->name, name))
+            return container->item;
+        if (stricmp(container->room->name, name))
+            return container->item;
+        if (stricmp(container->text, name))
+            return container->item;
+        container = container->next;
+    }
+
     return NULL;
 }
 
 struct container* remove_container(struct container *first, void *entry){
+    free(first);
     return NULL;
 }
+
+
+
+
 
 
 

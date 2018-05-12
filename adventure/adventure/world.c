@@ -11,23 +11,29 @@
 #include"world.h"
 
 struct container* create_world(){
-    struct container* cont = (struct container*)calloc(1, sizeof(struct container));
-  
-    cont->command = NULL;
-    cont->item = NULL;
-    cont->room = NULL;
-    cont->text = NULL;
-    cont->next = NULL;
    
-    return cont;
+    struct container* world = (struct container*)calloc(1, sizeof(struct container));
+    world->command =  NULL;
+    world->item = NULL;
+    world->next = NULL;
+    world->room = NULL;
+    world->text = NULL;
+    
+    return world;
 }
+
 
 struct container* add_room_to_world(struct container* world, struct room* room){
     if(world == NULL || room == NULL){
         return NULL;
     }
     
+    while(world->next != NULL){
+        world = world->next;
+    }
+    
     world->room = room;
+    world->next = NULL;
     return world;
 }
 

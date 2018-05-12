@@ -23,20 +23,28 @@ int main(int argc, const char * argv[]) {
     printf( "--------------------TEST BACKPACK--------------------------------\n");
 
     struct backpack* back = create_backpack(3);
-    struct item* item1 = create_item("SKALA1", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
-    struct item* item2 = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
-    struct item* item3 = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
+    struct item* itemA = create_item("SKALA1", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
+    struct item* itemB = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
+    struct item* itemC = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
 
-//    add_item_to_backpack(back, item1);
-//    add_item_to_backpack(back, item2);
-    add_item_to_backpack(back, item3);
+    add_item_to_backpack(back, itemA);
+    add_item_to_backpack(back, itemB);
+    add_item_to_backpack(back, itemC);
 
-    delete_item_from_backpack(back, item3);
+    
+    delete_item_from_backpack(back, itemB);
 
+    if(get_item_from_backpack(back, itemC->name) != NULL){
+        printf("hure %s\n", itemC->name);
+    }
+    
     print_backpack(back);
     
     printf( "--------------------TEST ROOM--------------------------------\n");
-//    struct room* garden = create_room("garden", "Stojis pred chyzou a rozoznavas zahradku, ktora je znacne neudrziavana. este ze husty lesik na severe v porovnani so zahradkou nicim nevynika.");
+    struct room* room = create_room("Bakery", "The delightful smell of meat pies fills the air, making you hungry. The baker flashes a grin, as he slides a box marked under a table with his foot.");
+    if(add_room_to_world(NULL, room) != NULL) printf("hura");
+
+    //    struct room* garden = create_room("garden", "Stojis pred chyzou a rozoznavas zahradku, ktora je znacne neudrziavana. este ze husty lesik na severe v porovnani so zahradkou nicim nevynika.");
 //
 //    struct item* item = create_item("SKALA", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
 //    struct item* item2 = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.2", USABLE);
@@ -50,9 +58,12 @@ int main(int argc, const char * argv[]) {
 //    add_item_to_room(garden, item4);
 //    add_item_to_room(garden, item5);
 //
-//    //delete_item_from_room(garden, item5);
+//    delete_item_from_room(garden, item5);
+//    delete_item_from_room(garden, item4);
+//    delete_item_from_room(garden, item3);
 //
-//    if(get_from_container_by_name(garden->items,"SKaLA5")!=NULL){
+//
+//    if(get_from_container_by_name(garden->items,"SKaLA5") != NULL){
 //        printf("hure\n");
 //    }
 //    //show_room(garden);

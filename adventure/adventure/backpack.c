@@ -70,7 +70,6 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
     
     if(backpack->items->next == NULL){
         free(backpack->items->next);
-        backpack->items->next = NULL;
         backpack->size--;
         return;
     }else{
@@ -83,7 +82,6 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
             
                 if(i == backpack->size-1 ){
                     free(container->next);
-                    container->next = NULL;
                     backpack->size--;
                     break;
                 }else{
@@ -101,7 +99,6 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
         }
     }
 }
-
 
 void print_backpack(struct backpack* backpack){
         struct container* container;

@@ -1,9 +1,3 @@
-//
-//  game.c
-//  adventure
-//
-//  Created by Jakub Brehuv on 11/05/2018.
-//
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -27,7 +21,7 @@ void play_game(struct game* game){
 struct game* create_game(void){
     struct game* game = (struct game*)calloc(1, sizeof(struct game));
     game->parser= NULL;
-    game->world= create_world();
+    game->world = create_world();
     
     struct room* garden = create_room("garden1", "Stojis pred chyzou a rozoznavas zahradku, ktora je znacne neudrziavana. este ze husty lesik na severe v porovnani so zahradkou nicim nevynika.");
     struct room* garden2 = create_room("garden2", "Stojis pred chyzou a rozoznavas zahradku, ktora je znacne neudrziavana. este ze husty lesik na severe v porovnani so zahradkou nicim nevynika.");

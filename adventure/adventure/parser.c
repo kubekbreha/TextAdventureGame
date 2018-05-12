@@ -1,22 +1,17 @@
-//
-//  parser.c
-//  adventure
-//
-//  Created by Jakub Brehuv on 11/05/2018.
-//
 
 #include<stdio.h>
+#include <stdlib.h>
 #include"parser.h"
 
 struct parser* create_parser(){
-    
-    
-    
-    
+ 
     return NULL;
 }
 
 struct parser* destroy_parser(struct parser* parser){
+    free(parser->commands);
+    free(parser->history);
+    free(parser);
     return NULL;
 }
 

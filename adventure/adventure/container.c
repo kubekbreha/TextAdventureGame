@@ -1,9 +1,3 @@
-//
-//  container.c
-//  adventure
-//
-//  Created by Jakub Brehuv on 10/05/2018.
-//
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -126,7 +120,7 @@ void* get_from_container_by_name(struct container *first, const char *name){
 struct container* remove_container(struct container *first, void *entry){
     if(first == NULL || entry == NULL) return NULL;
     
-    struct container* tmp = (struct container*)calloc(1, sizeof(struct container));
+    struct container* tmp ;
     tmp = first;
     
     while (first->next != NULL){

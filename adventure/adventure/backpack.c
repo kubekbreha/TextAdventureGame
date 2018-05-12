@@ -63,8 +63,8 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
     if(backpack == NULL || item == NULL) return;
     
     if(backpack->items->next == NULL){
-        free(backpack->items->next);
-        backpack->size--;
+        free(backpack->items);
+        //backpack->size--;
         return;
     }else{
         struct container* container;

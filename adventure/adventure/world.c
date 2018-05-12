@@ -58,7 +58,7 @@ struct room* get_room(struct container* world, char* name){
 
     struct container* container = world;
     
-    while (world != NULL){
+    while (world->next != NULL){
         if (container->room->name == name)
             return container->room;
         container = container->next;

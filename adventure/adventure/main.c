@@ -20,29 +20,29 @@ int main(int argc, const char * argv[]) {
 //    printf("%s\n%s\n", help->name, help->description);
 
     
-    printf( "--------------------TEST BACKPACK--------------------------------\n");
-
-    struct backpack* back = create_backpack(3);
-    struct item* itemA = create_item("SKALA1", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
-    struct item* itemB = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
-    struct item* itemC = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
-
-    add_item_to_backpack(back, itemA);
-    add_item_to_backpack(back, itemB);
-    add_item_to_backpack(back, itemC);
-
-    
-    delete_item_from_backpack(back, itemB);
-
-    if(get_item_from_backpack(back, itemC->name) != NULL){
-        printf("hure %s\n", itemC->name);
-    }
-    
-    print_backpack(back);
-    
-    printf( "--------------------TEST ROOM--------------------------------\n");
-    struct room* room = create_room("Bakery", "The delightful smell of meat pies fills the air, making you hungry. The baker flashes a grin, as he slides a box marked under a table with his foot.");
-    if(add_room_to_world(NULL, room) != NULL) printf("hura");
+//    printf( "--------------------TEST BACKPACK--------------------------------\n");
+//
+//    struct backpack* back = create_backpack(3);
+//    struct item* itemA = create_item("SKALA1", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
+//    struct item* itemB = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
+//    struct item* itemC = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
+//
+//    add_item_to_backpack(back, itemA);
+//    add_item_to_backpack(back, itemB);
+//    add_item_to_backpack(back, itemC);
+//
+//
+//    delete_item_from_backpack(back, itemB);
+//
+//    if(get_item_from_backpack(back, itemC->name) != NULL){
+//        printf("hure %s\n", itemC->name);
+//    }
+//
+//    print_backpack(back);
+//
+//    printf( "--------------------TEST ROOM--------------------------------\n");
+    struct item* item = create_item("KLUC", "Touto vecou sa odomykaju ine veci.", MOVABLE | USABLE | EXAMINABLE);
+    if(create_container(NULL, ITEM, item) != NULL){printf("hura");}
 
     //    struct room* garden = create_room("garden", "Stojis pred chyzou a rozoznavas zahradku, ktora je znacne neudrziavana. este ze husty lesik na severe v porovnani so zahradkou nicim nevynika.");
 //

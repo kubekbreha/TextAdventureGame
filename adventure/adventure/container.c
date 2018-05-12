@@ -31,7 +31,7 @@
 
 
 struct container* create_container(struct container* first, enum container_type type, void* entry){
-    if(first== NULL || entry==NULL){
+    if( entry==NULL){
         return NULL;
     }
     struct container* container = (struct container*)calloc(1, sizeof(struct container));
@@ -77,7 +77,7 @@ struct container* destroy_containers(struct container* first){
     }
     free(container);
     free(first);
-    return NULL;
+    return container;
 }
 
 
@@ -107,7 +107,7 @@ void* get_from_container_by_name(struct container *first, const char *name){
     }
     struct container* container = first;
 
-    while (container != NULL){
+    while (container->next != NULL){
         
         if (stricmp(container->item->name, name))
             return container->item;
@@ -124,8 +124,23 @@ void* get_from_container_by_name(struct container *first, const char *name){
 }
 
 struct container* remove_container(struct container *first, void *entry){
-    free(first);
-    return NULL;
+    if(first == NULL || entry == NULL) return NULL;
+    
+    struct container* tmp = (struct container*)calloc(1, sizeof(struct container));
+    tmp = first;
+    
+    while (first->next != NULL){
+        if (first->item == entry)
+            free(first->item);
+        if (first->command == entry)
+            free(first->item);
+        if (first->room->name == entry)
+            free(first->item);
+        if (first->text == entry)
+            free(first->item);
+        first = first->next;
+    }
+    return tmp;
 }
 
 

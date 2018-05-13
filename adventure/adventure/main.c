@@ -21,12 +21,12 @@ int main(int argc, const char * argv[]) {
     struct item* itemB = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
     struct item* itemC = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
 
-    add_item_to_backpack(back, itemA);
-    add_item_to_backpack(back, itemB);
-    add_item_to_backpack(back, itemC);
+//    add_item_to_backpack(back, itemA);
+//    add_item_to_backpack(back, itemB);
+    printf("%d\n", add_item_to_backpack(back, itemB));
 
 
-    delete_item_from_backpack(back, itemB);
+    //delete_item_from_backpack(back, itemB);
 
     if(get_item_from_backpack(back, itemC->name) != NULL){
         printf("hure %s\n", itemC->name);

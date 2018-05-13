@@ -24,9 +24,13 @@ struct backpack* destroy_backpack(struct backpack* backpack){
 
 
 bool add_item_to_backpack(struct backpack* backpack, struct item* item){
-    if(item == NULL || backpack == NULL){
+    if(item == NULL ){
         return false;
     }
+    if( backpack == NULL){
+        return false;
+    }
+    
     
     if(backpack->capacity >= backpack->size){
         if(backpack->items == NULL){

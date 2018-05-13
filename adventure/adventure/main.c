@@ -15,24 +15,24 @@ int main(int argc, const char * argv[]) {
 
     
 //   printf( "--------------------TEST BACKPACK--------------------------------\n");
-//
-//    struct backpack* back = create_backpack(3);
-//    struct item* itemA = create_item("SKALA1", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
-//    struct item* itemB = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
-//    struct item* itemC = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
-//
-////    add_item_to_backpack(back, itemA);
-////    add_item_to_backpack(back, itemB);
-//    printf("%d\n", add_item_to_backpack(back, itemB));
-//
-//
-//    //delete_item_from_backpack(back, itemB);
-//
-//    if(get_item_from_backpack(back, itemC->name) != NULL){
-//        printf("hure %s\n", itemC->name);
-//    }
 
-   // print_backpack(back);
+    struct backpack* back = create_backpack(3);
+    struct item* itemA = create_item("SKALA1", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE | EXAMINABLE);
+    struct item* itemB = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
+    struct item* itemC = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", USABLE );
+
+    add_item_to_backpack(back, itemA);
+    add_item_to_backpack(back, itemB);
+    add_item_to_backpack(back, itemC);
+
+
+    delete_item_from_backpack(back, itemB);
+
+    if(get_item_from_backpack(back, itemB->name) == NULL){
+        printf("hure \n");
+    }
+
+    print_backpack(back);
 
 //    printf( "--------------------TEST ROOM--------------------------------\n");
 //    struct item* item = create_item("KLUC", "Touto vecou sa odomykaju ine veci.", MOVABLE | USABLE | EXAMINABLE);
@@ -66,20 +66,20 @@ int main(int argc, const char * argv[]) {
 //    create_game();
 //
     
-    struct room* room = create_room("Thief Guild", "The Thief Guild is a dark den of unprincipled types. You clutch your purse (though several other people here would like to clutch your purse as well).");
-    struct item* item = create_item("SKALA", "Pokial nie si sochar tak si ju prestan vsimat.", NONE);
-    struct item* item2 = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", NONE);
-    struct item* item3 = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", NONE);
-    add_item_to_room(room, item);
-    add_item_to_room(room, item2);
-    add_item_to_room(room, item3);
-    
-    delete_item_from_room(room, item2);
-    if(get_item_from_room(room, item2->name) == NULL){
-        printf("hura\n");
-    };
-    
-    print_room(room->items);
+//    struct room* room = create_room("Thief Guild", "The Thief Guild is a dark den of unprincipled types. You clutch your purse (though several other people here would like to clutch your purse as well).");
+//    struct item* item = create_item("SKALA", "Pokial nie si sochar tak si ju prestan vsimat.", NONE);
+//    struct item* item2 = create_item("SKALA2", "Pokial nie si sochar tak si ju prestan vsimat.", NONE);
+//    struct item* item3 = create_item("SKALA3", "Pokial nie si sochar tak si ju prestan vsimat.", NONE);
+//    add_item_to_room(room, item);
+//    add_item_to_room(room, item2);
+//    add_item_to_room(room, item3);
+//
+//    delete_item_from_room(room, item2);
+//    if(get_item_from_room(room, item2->name) == NULL){
+//        printf("hura\n");
+//    };
+//
+//    print_room(room->items);
     
     return 0;
 }

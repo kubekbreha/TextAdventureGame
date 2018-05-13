@@ -67,33 +67,33 @@ void delete_item_from_backpack(struct backpack* backpack, struct item* item){
     if(backpack == NULL || item == NULL) return;
     
     if(backpack->items->next == NULL){
-        free(backpack->items);
-        //backpack->size--;
+        struct container* toDelete = backpack->items;
+        backpack->items = backpack->items->next;
+        free(toDelete);
+        backpack->size--;
         return;
     }else{
         struct container* container;
         container = backpack->items;
         
-        for (int i = 0; i < backpack->size; i++){
+        while(container->next != NULL){
             if(container->item == item){
-                printf("found item %d\n", i);
-            
-                if(i == backpack->size-1 ){
-                    free(container->next);
-                    backpack->size--;
-                    break;
-                }else{
-                    struct container* temp = container->next;
-                    container->item = container->next->item;
-                    container->next = temp->next;
-                    free(temp);
-                    backpack->size--;
-                }
+                
+                struct container* temp = container->next;
+                container->item = container->next->item;
+                container->next = temp->next;
+                free(temp);
+                backpack->size--;
                 return;
-            }else{
-                printf("NOT found item %d\n", i);
-                container = container->next;
             }
+            if(container->next->next == NULL ){
+                struct container* temp = container->next;
+                container->next = temp->next;
+                free(temp);
+                backpack->size--;
+                return;
+            }
+            container = container->next;
         }
     }
 }

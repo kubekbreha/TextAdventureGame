@@ -67,7 +67,9 @@ void delete_item_from_room(struct room* room, struct item* item){
     if(room == NULL || item == NULL) return;
     
     if(room->items->next == NULL){
-        free(room->items->next);
+        struct container* toDelete = room->items;
+        room->items = room->items->next;
+        free(toDelete);
         return;
     }else{
         struct container* container;
@@ -93,7 +95,16 @@ void delete_item_from_room(struct room* room, struct item* item){
     }
 }
     
-
+void print_room(struct container* room){
+    struct container* container;
+    container = room;
+    
+    while(container != NULL){
+        printf("found: %s\n", container->item->name);
+        container = container->next;
+        
+    }
+}
 
 
 void add_item_to_room(struct room* room, struct item* item){

@@ -24,7 +24,7 @@ struct container* add_room_to_world(struct container* world, struct room* room){
         return NULL;
     }
     
-    struct container* newWorld = (struct container*)malloc(sizeof(struct container*));
+    struct container* newWorld = (struct container*)calloc(1, sizeof(struct container));
 
     if(newWorld == NULL){
         fprintf(stderr, "Unable to allocate memory for new node\n");

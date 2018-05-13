@@ -63,15 +63,26 @@ struct container* destroy_containers(struct container* first){
         return NULL;
     }
     
-    struct container* container= first;
-    while(container!= NULL){
-        struct container* ptr= container;
-        container= container->next;
-        free(ptr);
+    struct container* temp;
+    
+    while(first != NULL){
+        temp = first;
+        if (temp->type == ITEM)
+            free(temp->item);
+        if (temp->type == COMMAND)
+            free(temp->command);
+        if (temp->type == TEXT)
+            free(temp->text);
+        if (temp->type== ROOM)
+            free(temp->room);
+        
+        first = first->next;
+        
+        free(temp);
     }
-    free(container);
-    free(first);
-    return container;
+        
+    
+    return first;
 }
 
 
@@ -106,11 +117,11 @@ void* get_from_container_by_name(struct container *first, const char *name){
         if (stricmp(container->item->name, name))
             return container->item;
         if (stricmp(container->command->name, name))
-            return container->item;
+            return container->command;
         if (stricmp(container->room->name, name))
-            return container->item;
+            return container->room;
         if (stricmp(container->text, name))
-            return container->item;
+            return container->text;
         container = container->next;
     }
 
@@ -127,11 +138,11 @@ struct container* remove_container(struct container *first, void *entry){
         if (first->item == entry)
             free(first->item);
         if (first->command == entry)
-            free(first->item);
+            free(first->command);
         if (first->room->name == entry)
-            free(first->item);
+            free(first->room);
         if (first->text == entry)
-            free(first->item);
+            free(first->text);
         first = first->next;
     }
     return tmp;

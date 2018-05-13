@@ -89,7 +89,7 @@ int main(int argc, const char * argv[]) {
     struct room* item2 = create_room("intrak3", "Velmi smradlava izba3");
     struct room* item3 = create_room("intrak4", "Velmi smradlava izba4");
     
-    struct container* world =add_room_to_world(world, item0);
+    struct container* world = add_room_to_world(world, item0);
     add_room_to_world(world, item1);
     add_room_to_world(world, item2);
     add_room_to_world(world, item3);

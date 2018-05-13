@@ -22,7 +22,10 @@ struct room* create_room(char *name, char *description){
     if(name == NULL || description== NULL){
         return NULL;
     }
-  
+    if(strlen(name)<1 || strlen(description)<1){
+        return NULL;
+    }
+    
     struct room* new_room = (struct room*)calloc(1, sizeof(struct room));
     new_room->name = name;
     new_room->description = description;
